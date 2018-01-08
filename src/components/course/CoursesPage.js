@@ -1,6 +1,7 @@
-import React, {PropTypes} from 'react';
-import {connect} from 'react-redux';
-import {createCourse} from '../../actions/courseActions';
+import React, { PropTypes } from 'react';
+import { connect } from 'react-redux';
+import { createCourse } from '../../actions/courseActions';
+import TextField from 'material-ui/TextField';
 
 class CoursesPage extends React.Component {
     constructor(props) {
@@ -24,7 +25,7 @@ class CoursesPage extends React.Component {
         this.props.createCourse(this.state.courses);
     }
 
-    courseRow(course, index){
+    courseRow(course, index) {
         return <div key={index}>{course.title}</div>;
     }
 
@@ -34,10 +35,15 @@ class CoursesPage extends React.Component {
                 <h1>Courses</h1>
                 {this.props.courses.map(this.courseRow)}
                 <h2>Add Course</h2>
-                <input
+                {/*<input
                     type="text"
                     onChange={this.onTitleChange}
                     value={this.state.courses.title}
+                />*/}
+                <TextField
+                    hintText="Course Title"
+                    floatingLabelText="Enter Course Title"
+                    onChange={this.onTitleChange}
                 />
                 <input
                     type="submit"
