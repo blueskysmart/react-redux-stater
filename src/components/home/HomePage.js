@@ -3,7 +3,9 @@ import React from 'react';
 class HomePage extends React.Component {
     render() {
         return (
-            <p>HomePage</p>
+            <div className="alert alert-info" role="alert">
+                <p>Hello, I'm Cuong.</p>
+          </div>
         );
     }
 }
