@@ -5,6 +5,9 @@ import DropDownMenu from 'material-ui/DropDownMenu';
 import Drawer from 'material-ui/Drawer';
 import MenuItem from 'material-ui/MenuItem';
 import RaisedButton from 'material-ui/RaisedButton';
+import { blue500, red500, greenA200 } from 'material-ui/styles/colors';
+import SvgIcon from 'material-ui/SvgIcon';
+import Img from '../common/Img'
 
 class AboutPage extends React.Component {
     constructor(props) {
@@ -30,6 +33,24 @@ class AboutPage extends React.Component {
     }
 
     render() {
+        const iconStyles = {
+            marginRight: 24
+        };
+
+        const HomeIcon = (props) => (
+            <SvgIcon {...props}>
+                <path d="M14590 9629 c-63 -17 -109 -41 -126 -66 -17 -27 -31 -155 -20 -197 5 -21 12 -26 39 -26 17 0 60 -10 95 -22 l62 -23 37 20 c51 27 75 98 71 203 -3 74 -4 77 -37 99 -36 24 -64 27 -121 12z" />
+            </SvgIcon>
+        );
+
+        // const parserConfig = {
+        //     replace: domNode => {
+        //         if (domNode.type === DOM_TYPE_TAG && domNode.name === 'img') {
+        //             return <img src={domNode.attribs.src} alt={domNode.attribs.alt} className={domNode.attribs.class} />;
+        //         }
+        //     }
+        // };
+
         return (
             <div>
                 <div className="alert alert-info" role="alert">
@@ -64,7 +85,18 @@ class AboutPage extends React.Component {
                         <p>Description: </p>
                     </div>
                     <div className="alert" role="alert">
-                        <p>Technical Stack: </p>
+                        <span>Technical Stack:
+                        <Img
+                                src="https://getbootstrap.com/assets/brand/bootstrap-solid.svg"
+                                width="30" height="30"
+                                className="d-inline-block align-top"
+                            />
+                            <Img
+                                src="https://getbootstrap.com/assets/brand/bootstrap-solid.svg"
+                                width="30" height="30"
+                                className="d-inline-block align-top" alt=""
+                            />
+                        </span>
                         <p>Date of Birth: </p>
                     </div>
                 </Drawer>
